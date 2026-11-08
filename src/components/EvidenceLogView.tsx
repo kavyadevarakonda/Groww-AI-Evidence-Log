@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import { GOLDEN_SET, REJECTED_AI_CASE } from '../data/corpusData';
 
-export const EvidenceLogView: React.FC<{ onBackToMvp?: () => void }> = ({ onBackToMvp }) => {
+export const EvidenceLogView: React.FC = () => {
   const [filterMode, setFilterMode] = useState<'all' | 'matches' | 'mismatches'>('all');
 
   const filteredItems = GOLDEN_SET.filter(item => {
@@ -35,19 +35,9 @@ export const EvidenceLogView: React.FC<{ onBackToMvp?: () => void }> = ({ onBack
               <FileCheck className="w-5 h-5" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <h1 className="text-xl font-bold text-slate-900 tracking-tight">
-                  AI Evidence Log & Golden Set Validation
-                </h1>
-                {onBackToMvp && (
-                  <button
-                    onClick={onBackToMvp}
-                    className="px-2.5 py-1 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-[11px] font-bold border border-emerald-200 transition-colors cursor-pointer"
-                  >
-                    ← Back to MVP Prototype
-                  </button>
-                )}
-              </div>
+              <h1 className="text-xl font-bold text-slate-900 tracking-tight">
+                AI Evidence Log & Golden Set Validation
+              </h1>
               <p className="text-xs text-slate-500 mt-0.5">
                 Evaluation benchmark of 20 hand-labeled ground-truth records, mismatch resolutions, and eval-gate guardrail audit.
               </p>
