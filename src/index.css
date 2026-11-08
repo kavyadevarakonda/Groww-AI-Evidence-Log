@@ -12,6 +12,17 @@
   .font-mono {
     font-family: 'JetBrains Mono', monospace;
   }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 /* 16:9 Slide aspect container */
@@ -108,6 +119,116 @@
 .figma-frame-1080 h3 {
   font-size: 28px !important;
   line-height: 1.3 !important;
+}
+
+/* Typography (+20% font size scale across MVP & AI Discovery Engine) */
+.mvp-font-ppt-14,
+.mvp-font-ppt-14 p,
+.mvp-font-ppt-14 span,
+.mvp-font-ppt-14 li,
+.mvp-font-ppt-14 a,
+.mvp-font-ppt-14 button,
+.mvp-font-ppt-14 input,
+.mvp-font-ppt-14 select,
+.mvp-font-ppt-14 label,
+.mvp-font-ppt-14 table,
+.mvp-font-ppt-14 th,
+.mvp-font-ppt-14 td,
+.mvp-font-ppt-14 strong,
+.mvp-font-ppt-14 div {
+  font-size: 16.8px !important;
+  line-height: 1.45 !important;
+}
+
+.mvp-font-ppt-14 h1 {
+  font-size: 28px !important;
+  line-height: 1.25 !important;
+}
+
+.mvp-font-ppt-14 h2,
+.mvp-font-ppt-14 h3 {
+  font-size: 20px !important;
+  line-height: 1.3 !important;
+}
+
+.mvp-font-ppt-14 .stat-hero-3d {
+  font-size: 34px !important;
+  line-height: 1.15 !important;
+}
+
+.mvp-font-ppt-14 .groww-green-brand > span {
+  font-size: 25px !important;
+  line-height: 1.15 !important;
+  color: #00D09C !important;
+}
+
+/* Groww AI Discovery Engine Typography (-10% across all font sizes) */
+.discovery-engine-font,
+.discovery-engine-font p,
+.discovery-engine-font span,
+.discovery-engine-font li,
+.discovery-engine-font a,
+.discovery-engine-font button,
+.discovery-engine-font input,
+.discovery-engine-font select,
+.discovery-engine-font label,
+.discovery-engine-font div {
+  font-size: 15.1px !important;
+  line-height: 1.45 !important;
+}
+
+.discovery-engine-font h1 {
+  font-size: 25.2px !important;
+  line-height: 1.25 !important;
+}
+
+.discovery-engine-font h2,
+.discovery-engine-font h3 {
+  font-size: 18px !important;
+  line-height: 1.3 !important;
+}
+
+.discovery-engine-font .stat-hero-3d {
+  font-size: 30.6px !important;
+  line-height: 1.15 !important;
+}
+
+.discovery-engine-font .groww-green-brand > span {
+  font-size: 22.5px !important;
+  line-height: 1.15 !important;
+  color: #00D09C !important;
+}
+
+.discovery-engine-font .discovery-top-title {
+  font-size: 18.5px !important;
+  line-height: 1.25 !important;
+}
+
+.discovery-engine-font .discovery-sidebar-title {
+  font-size: 17.5px !important;
+  line-height: 1.25 !important;
+}
+
+.discovery-engine-font .discovery-main-heading,
+.discovery-engine-font .discovery-main-heading > span {
+  font-size: 27.7px !important;
+  line-height: 1.2 !important;
+}
+
+/* Keep the standard-size mobile phone viewport proportional & scrollable (+20% font scale) */
+.mvp-mobile-screen,
+.mvp-mobile-screen p,
+.mvp-mobile-screen span,
+.mvp-mobile-screen button,
+.mvp-mobile-screen input,
+.mvp-mobile-screen div {
+  font-size: 16.8px !important;
+  line-height: 1.4 !important;
+}
+
+.mvp-mobile-screen .groww-phone-brand > span {
+  font-size: 24px !important;
+  line-height: 1.15 !important;
 }
 
 /* Custom 3D & elevation helpers */

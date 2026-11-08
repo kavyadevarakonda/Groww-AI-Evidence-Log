@@ -406,9 +406,9 @@ export const Groww3DLogo: React.FC<{ size?: number; showText?: boolean; classNam
         </svg>
       </div>
 
-      {/* 3D Wordmark */}
+      {/* 3D Wordmark in Groww Green Palette */}
       {showText && (
-        <span className="text-[22px] font-black tracking-tight text-slate-900 drop-shadow-[0_1px_2px_rgba(0,0,0,0.1)] flex items-center">
+        <span className="text-[22px] font-black tracking-tight text-[#00D09C] drop-shadow-[0_2px_6px_rgba(0,208,156,0.28)] flex items-center">
           Groww
         </span>
       )}
@@ -472,4 +472,668 @@ export const Cute3DBadge: React.FC<{
     </div>
   );
 };
+
+export type Icon3DType =
+  | 'smartphone'
+  | 'shieldCheck'
+  | 'shieldAlert'
+  | 'lock'
+  | 'checkCircle'
+  | 'sparkles'
+  | 'alertTriangle'
+  | 'scale'
+  | 'flame'
+  | 'calendar'
+  | 'skipRotate'
+  | 'bot'
+  | 'send'
+  | 'book'
+  | 'trendDown'
+  | 'bronzeMedal'
+  | 'silverMedal'
+  | 'goldMedal'
+  | 'diamondGem'
+  | 'platinumCrown'
+  | 'chevronRight'
+  | 'arrowLeft'
+  | 'stopAlert'
+  | 'message'
+  | 'database'
+  | 'search'
+  | 'play'
+  | 'info'
+  | 'fileReport'
+  | 'folder'
+  | 'brain'
+  | 'chevronDown'
+  | 'chevronUp';
+
+export const Icon3D: React.FC<{
+  type: Icon3DType;
+  size?: number;
+  className?: string;
+}> = ({ type, size = 24, className = '' }) => {
+  const s = size;
+
+  switch (type) {
+    case 'smartphone':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_8px_rgba(16,185,129,0.35)] ${className}`}>
+          <defs>
+            <linearGradient id="phoneBody3D" x1="12" y1="6" x2="52" y2="58" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#34D399" />
+              <stop offset="50%" stopColor="#059669" />
+              <stop offset="100%" stopColor="#064E3B" />
+            </linearGradient>
+            <linearGradient id="phoneScreen3D" x1="16" y1="12" x2="48" y2="52" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#1E293B" />
+              <stop offset="100%" stopColor="#0F172A" />
+            </linearGradient>
+          </defs>
+          {/* 3D Extrusion Base */}
+          <rect x="14" y="8" width="38" height="52" rx="10" fill="#064E3B" />
+          {/* Main Body */}
+          <rect x="12" y="5" width="38" height="52" rx="10" fill="url(#phoneBody3D)" stroke="#A7F3D0" strokeWidth="1.5" />
+          {/* Screen */}
+          <rect x="16" y="10" width="30" height="41" rx="6" fill="url(#phoneScreen3D)" />
+          {/* 3D Green Chart Wave inside screen */}
+          <path d="M20 38L27 31L33 34L42 23" stroke="#00D09C" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="42" cy="23" r="3" fill="#34D399" />
+          {/* Top Gloss */}
+          <path d="M18 12C22 10 32 10 42 12" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.5" />
+          {/* Home bar */}
+          <rect x="26" y="47" width="10" height="2" rx="1" fill="#64748B" />
+        </svg>
+      );
+
+    case 'shieldCheck':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_7px_rgba(16,185,129,0.35)] ${className}`}>
+          <defs>
+            <linearGradient id="shieldEm3D" x1="12" y1="8" x2="52" y2="58" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#6EE7B7" />
+              <stop offset="45%" stopColor="#10B981" />
+              <stop offset="100%" stopColor="#047857" />
+            </linearGradient>
+          </defs>
+          {/* 3D Depth Shadow */}
+          <path d="M32 9L52 17V33C52 46 43 55 32 59C21 55 12 46 12 33V17L32 9Z" fill="#064E3B" />
+          {/* Main 3D Shield */}
+          <path d="M32 6L52 14V30C52 43 43 52 32 56C21 52 12 43 12 30V14L32 6Z" fill="url(#shieldEm3D)" stroke="#D1FAE5" strokeWidth="1.5" />
+          {/* Specular Highlight */}
+          <path d="M32 10L16 16V28C16 30 16.5 32 17 34C21 24 28 16 44 14L32 10Z" fill="#FFFFFF" fillOpacity="0.28" />
+          {/* Embossed 3D Checkmark */}
+          <path d="M23 31L29 37L42 24" stroke="#064E3B" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.35" />
+          <path d="M23 29.5L29 35.5L42 22.5" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+
+    case 'shieldAlert':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_7px_rgba(244,63,94,0.4)] ${className}`}>
+          <defs>
+            <linearGradient id="shieldRose3D" x1="12" y1="8" x2="52" y2="58" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#FDA4AF" />
+              <stop offset="45%" stopColor="#F43F5E" />
+              <stop offset="100%" stopColor="#9F1239" />
+            </linearGradient>
+          </defs>
+          <path d="M32 9L52 17V33C52 46 43 55 32 59C21 55 12 46 12 33V17L32 9Z" fill="#881337" />
+          <path d="M32 6L52 14V30C52 43 43 52 32 56C21 52 12 43 12 30V14L32 6Z" fill="url(#shieldRose3D)" stroke="#FFE4E6" strokeWidth="1.5" />
+          <path d="M32 10L16 16V28C21 22 28 15 44 14L32 10Z" fill="#FFFFFF" fillOpacity="0.28" />
+          <path d="M32 20V33" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" />
+          <circle cx="32" cy="42" r="3" fill="#FFFFFF" />
+        </svg>
+      );
+
+    case 'lock':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_7px_rgba(99,102,241,0.35)] ${className}`}>
+          <defs>
+            <linearGradient id="lockBody3D" x1="14" y1="26" x2="50" y2="56" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#818CF8" />
+              <stop offset="50%" stopColor="#4F46E5" />
+              <stop offset="100%" stopColor="#312E81" />
+            </linearGradient>
+          </defs>
+          {/* 3D Shackle */}
+          <path d="M22 28V19C22 13.5 26.5 9 32 9C37.5 9 42 13.5 42 19V28" stroke="#CBD5E1" strokeWidth="6" strokeLinecap="round" />
+          <path d="M22 28V19C22 13.5 26.5 9 32 9C37.5 9 42 13.5 42 19V28" stroke="#F8FAFC" strokeWidth="2.5" strokeLinecap="round" />
+          {/* 3D Base Extrusion */}
+          <rect x="14" y="29" width="36" height="28" rx="8" fill="#1E1B4B" />
+          {/* Main Lock Body */}
+          <rect x="14" y="26" width="36" height="28" rx="8" fill="url(#lockBody3D)" stroke="#C7D2FE" strokeWidth="1.5" />
+          {/* Gloss */}
+          <rect x="18" y="29" width="28" height="4" rx="2" fill="#FFFFFF" fillOpacity="0.35" />
+          {/* Keyhole */}
+          <circle cx="32" cy="39" r="4" fill="#FDE047" />
+          <path d="M32 42V47" stroke="#FDE047" strokeWidth="3.5" strokeLinecap="round" />
+        </svg>
+      );
+
+    case 'checkCircle':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_7px_rgba(147,51,234,0.35)] ${className}`}>
+          <defs>
+            <radialGradient id="sphereCheck3D" cx="35%" cy="30%" r="70%">
+              <stop offset="0%" stopColor="#C084FC" />
+              <stop offset="55%" stopColor="#9333EA" />
+              <stop offset="100%" stopColor="#4C1D95" />
+            </radialGradient>
+          </defs>
+          <circle cx="32" cy="34" r="24" fill="#3B0764" />
+          <circle cx="32" cy="31" r="24" fill="url(#sphereCheck3D)" stroke="#E9D5FF" strokeWidth="1.5" />
+          <ellipse cx="25" cy="19" rx="10" ry="5" fill="#FFFFFF" fillOpacity="0.35" transform="rotate(-15 25 19)" />
+          <path d="M22 31.5L28.5 38L42 24.5" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+
+    case 'sparkles':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_7px_rgba(245,158,11,0.4)] ${className}`}>
+          <defs>
+            <linearGradient id="starGold3D" x1="10" y1="10" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#FEF08A" />
+              <stop offset="50%" stopColor="#F59E0B" />
+              <stop offset="100%" stopColor="#B45309" />
+            </linearGradient>
+          </defs>
+          {/* Main 3D 4-Point Star */}
+          <path d="M30 8L36 24L52 30L36 36L30 52L24 36L8 30L24 24L30 8Z" fill="url(#starGold3D)" stroke="#FEF9C3" strokeWidth="1.5" />
+          {/* Secondary Emerald 3D Star */}
+          <path d="M49 8L51.5 14.5L58 17L51.5 19.5L49 26L46.5 19.5L40 17L46.5 14.5L49 8Z" fill="#00D09C" stroke="#A7F3D0" strokeWidth="1" />
+          {/* Tertiary Purple 3D Star */}
+          <path d="M16 42L18 47L23 49L18 51L16 56L14 51L9 49L14 47L16 42Z" fill="#A855F7" />
+          <circle cx="30" cy="30" r="3.5" fill="#FFFFFF" fillOpacity="0.8" />
+        </svg>
+      );
+
+    case 'alertTriangle':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_7px_rgba(245,158,11,0.4)] ${className}`}>
+          <defs>
+            <linearGradient id="triAmber3D" x1="32" y1="8" x2="32" y2="56" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#FDE047" />
+              <stop offset="55%" stopColor="#F59E0B" />
+              <stop offset="100%" stopColor="#B45309" />
+            </linearGradient>
+          </defs>
+          {/* 3D Base Extrusion */}
+          <path d="M35.5 13C33.9 10.2 29.9 10.2 28.3 13L9.3 47C7.7 49.8 9.7 53.5 13 53.5H51C54.3 53.5 56.3 49.8 54.7 47L35.5 13Z" fill="#78350F" />
+          {/* Main 3D Triangle */}
+          <path d="M35.5 10C33.9 7.2 29.9 7.2 28.3 10L9.3 44C7.7 46.8 9.7 50.5 13 50.5H51C54.3 50.5 56.3 46.8 54.7 44L35.5 10Z" fill="url(#triAmber3D)" stroke="#FEF08A" strokeWidth="1.5" />
+          {/* Exclamation */}
+          <path d="M32 22V34" stroke="#1E293B" strokeWidth="5" strokeLinecap="round" />
+          <circle cx="32" cy="42" r="3" fill="#1E293B" />
+        </svg>
+      );
+
+    case 'scale':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_7px_rgba(0,208,156,0.35)] ${className}`}>
+          <defs>
+            <linearGradient id="scale3D" x1="12" y1="10" x2="52" y2="54" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#6EE7B7" />
+              <stop offset="50%" stopColor="#00D09C" />
+              <stop offset="100%" stopColor="#047857" />
+            </linearGradient>
+          </defs>
+          <rect x="20" y="50" width="24" height="6" rx="3" fill="url(#scale3D)" />
+          <rect x="29" y="14" width="6" height="38" rx="3" fill="url(#scale3D)" />
+          <rect x="12" y="18" width="40" height="5" rx="2.5" fill="#FBBF24" />
+          <path d="M16 22L10 36H22L16 22Z" fill="#FDE047" stroke="#F59E0B" strokeWidth="1.5" />
+          <path d="M48 22L42 36H54L48 22Z" fill="#FDE047" stroke="#F59E0B" strokeWidth="1.5" />
+          <circle cx="32" cy="14" r="5" fill="#F59E0B" stroke="#FEF08A" strokeWidth="1.5" />
+        </svg>
+      );
+
+    case 'flame':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_9px_rgba(249,115,22,0.5)] ${className}`}>
+          <defs>
+            <radialGradient id="flameOuter3D" cx="50%" cy="65%" r="65%">
+              <stop offset="0%" stopColor="#FDE047" />
+              <stop offset="45%" stopColor="#F97316" />
+              <stop offset="85%" stopColor="#EA580C" />
+              <stop offset="100%" stopColor="#9A3412" />
+            </radialGradient>
+            <radialGradient id="flameInner3D" cx="50%" cy="70%" r="50%">
+              <stop offset="0%" stopColor="#FFFFFF" />
+              <stop offset="50%" stopColor="#FEF08A" />
+              <stop offset="100%" stopColor="#F59E0B" />
+            </radialGradient>
+          </defs>
+          {/* Outer 3D Volumetric Flame */}
+          <path
+            d="M34 6C34 6 49 18 49 35C49 47.5 40.5 56 32 56C23.5 56 15 47.5 15 35C15 26 21 18 24 15C24 21 28 23 28 23C26 14 34 6 34 6Z"
+            fill="url(#flameOuter3D)"
+            stroke="#FED7AA"
+            strokeWidth="1.2"
+          />
+          {/* Inner Glowing Core */}
+          <path
+            d="M32 26C32 26 40 33 40 42C40 48.5 36.5 53 32 53C27.5 53 24 48.5 24 42C24 36 28 31 32 26Z"
+            fill="url(#flameInner3D)"
+          />
+          {/* Specular Shine */}
+          <ellipse cx="26" cy="36" rx="2.5" ry="5" fill="#FFFFFF" fillOpacity="0.6" transform="rotate(-12 26 36)" />
+        </svg>
+      );
+
+    case 'calendar':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_8px_rgba(16,185,129,0.35)] ${className}`}>
+          <defs>
+            <linearGradient id="calHeader3D" x1="10" y1="12" x2="54" y2="26" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#34D399" />
+              <stop offset="100%" stopColor="#059669" />
+            </linearGradient>
+            <linearGradient id="calBody3D" x1="10" y1="24" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#FFFFFF" />
+              <stop offset="100%" stopColor="#E2E8F0" />
+            </linearGradient>
+          </defs>
+          {/* 3D Extrusion */}
+          <rect x="10" y="16" width="44" height="40" rx="10" fill="#064E3B" />
+          {/* Main Card */}
+          <rect x="10" y="13" width="44" height="40" rx="10" fill="url(#calBody3D)" stroke="#CBD5E1" strokeWidth="1.2" />
+          {/* Top Header */}
+          <path d="M10 23C10 17.5 14.5 13 20 13H44C49.5 13 54 17.5 54 23V26H10V23Z" fill="url(#calHeader3D)" />
+          {/* Binder Rings */}
+          <rect x="20" y="8" width="5" height="10" rx="2.5" fill="#F8FAFC" stroke="#475569" strokeWidth="1.2" />
+          <rect x="39" y="8" width="5" height="10" rx="2.5" fill="#F8FAFC" stroke="#475569" strokeWidth="1.2" />
+          {/* 3D Date Dots */}
+          <rect x="17" y="32" width="7" height="6" rx="2" fill="#94A3B8" />
+          <rect x="28.5" y="32" width="7" height="6" rx="2" fill="#00D09C" />
+          <rect x="40" y="32" width="7" height="6" rx="2" fill="#94A3B8" />
+          <rect x="17" y="41" width="7" height="6" rx="2" fill="#94A3B8" />
+          <rect x="28.5" y="41" width="7" height="6" rx="2" fill="#6366F1" />
+          <rect x="40" y="41" width="7" height="6" rx="2" fill="#94A3B8" />
+        </svg>
+      );
+
+    case 'skipRotate':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_8px_rgba(99,102,241,0.4)] ${className}`}>
+          <defs>
+            <radialGradient id="skipSphere3D" cx="35%" cy="30%" r="70%">
+              <stop offset="0%" stopColor="#A5B4FC" />
+              <stop offset="50%" stopColor="#6366F1" />
+              <stop offset="100%" stopColor="#312E81" />
+            </radialGradient>
+          </defs>
+          <circle cx="32" cy="34" r="24" fill="#1E1B4B" />
+          <circle cx="32" cy="31" r="24" fill="url(#skipSphere3D)" stroke="#E0E7FF" strokeWidth="1.5" />
+          <ellipse cx="25" cy="18" rx="10" ry="4.5" fill="#FFFFFF" fillOpacity="0.35" transform="rotate(-15 25 18)" />
+          {/* 3D Curved Skip Arrow */}
+          <path d="M21 26C24 20 31 18 37 20C43 22 46 29 44 36C42 42 35 45 28 43" stroke="#FFFFFF" strokeWidth="4.5" strokeLinecap="round" />
+          <path d="M18 18V27H27" stroke="#FFFFFF" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+
+    case 'bot':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_8px_rgba(0,208,156,0.4)] ${className}`}>
+          <defs>
+            <linearGradient id="botBody3D" x1="12" y1="16" x2="52" y2="54" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#6EE7B7" />
+              <stop offset="50%" stopColor="#00D09C" />
+              <stop offset="100%" stopColor="#047857" />
+            </linearGradient>
+          </defs>
+          {/* Antenna */}
+          <line x1="32" y1="8" x2="32" y2="17" stroke="#34D399" strokeWidth="4" strokeLinecap="round" />
+          <circle cx="32" cy="8" r="4.5" fill="#FDE047" stroke="#FEF08A" strokeWidth="1.5" />
+          {/* Side Ears */}
+          <rect x="7" y="28" width="6" height="14" rx="3" fill="#059669" />
+          <rect x="51" y="28" width="6" height="14" rx="3" fill="#059669" />
+          {/* 3D Head Shadow */}
+          <rect x="13" y="20" width="38" height="34" rx="12" fill="#064E3B" />
+          {/* Main 3D Head */}
+          <rect x="13" y="17" width="38" height="34" rx="12" fill="url(#botBody3D)" stroke="#D1FAE5" strokeWidth="1.5" />
+          {/* Visor Screen */}
+          <rect x="19" y="25" width="26" height="16" rx="6" fill="#0F172A" stroke="#34D399" strokeWidth="1.2" />
+          {/* Glowing Cyan Eyes */}
+          <circle cx="26" cy="33" r="3" fill="#38BDF8" />
+          <circle cx="38" cy="33" r="3" fill="#38BDF8" />
+          {/* Smile */}
+          <path d="M29 37C30.5 38.5 33.5 38.5 35 37" stroke="#00D09C" strokeWidth="2" strokeLinecap="round" />
+          {/* Gloss */}
+          <path d="M20 20H44" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeOpacity="0.45" />
+        </svg>
+      );
+
+    case 'send':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_3px_6px_rgba(15,23,42,0.35)] ${className}`}>
+          <defs>
+            <linearGradient id="sendPlane3D" x1="10" y1="10" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#38BDF8" />
+              <stop offset="50%" stopColor="#6366F1" />
+              <stop offset="100%" stopColor="#312E81" />
+            </linearGradient>
+          </defs>
+          <path d="M54 10L28 36L36 54L54 10Z" fill="#4338CA" />
+          <path d="M54 10L10 28L28 36L54 10Z" fill="url(#sendPlane3D)" stroke="#E0E7FF" strokeWidth="1.5" strokeLinejoin="round" />
+          <path d="M28 36V48L34 41" fill="#312E81" />
+        </svg>
+      );
+
+    case 'book':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_8px_rgba(0,208,156,0.35)] ${className}`}>
+          <defs>
+            <linearGradient id="bookCover3D" x1="8" y1="12" x2="56" y2="52" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#34D399" />
+              <stop offset="55%" stopColor="#00D09C" />
+              <stop offset="100%" stopColor="#047857" />
+            </linearGradient>
+          </defs>
+          {/* Book 3D Base */}
+          <path d="M10 18C18 15 26 16 32 20C38 16 46 15 54 18V50C46 47 38 48 32 52C26 48 18 47 10 50V18Z" fill="#064E3B" />
+          {/* Left & Right 3D Pages */}
+          <path d="M10 14C18 11 26 12 32 16C38 12 46 11 54 14V46C46 43 38 44 32 48C26 44 18 43 10 46V14Z" fill="url(#bookCover3D)" stroke="#D1FAE5" strokeWidth="1.5" />
+          <line x1="32" y1="16" x2="32" y2="48" stroke="#064E3B" strokeWidth="2.5" />
+          {/* Page Lines */}
+          <path d="M16 23H26M16 30H26M38 23H48M38 30H48" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" />
+          {/* Golden Bookmark Ribbon */}
+          <path d="M42 13V26L45 23L48 26V13" fill="#FBBF24" />
+        </svg>
+      );
+
+    case 'trendDown':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_3px_6px_rgba(244,63,94,0.4)] ${className}`}>
+          <defs>
+            <linearGradient id="downRose3D" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#FDA4AF" />
+              <stop offset="50%" stopColor="#F43F5E" />
+              <stop offset="100%" stopColor="#9F1239" />
+            </linearGradient>
+          </defs>
+          <rect x="8" y="8" width="48" height="48" rx="14" fill="url(#downRose3D)" stroke="#FFE4E6" strokeWidth="1.5" />
+          <path d="M18 22L28 32L35 25L46 38" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M36 38H46V28" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+
+    case 'bronzeMedal':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_7px_rgba(217,119,6,0.45)] ${className}`}>
+          <defs>
+            <radialGradient id="bronze3D" cx="35%" cy="30%" r="70%">
+              <stop offset="0%" stopColor="#FDBA74" />
+              <stop offset="55%" stopColor="#D97706" />
+              <stop offset="100%" stopColor="#78350F" />
+            </radialGradient>
+          </defs>
+          {/* Ribbon */}
+          <path d="M22 6L28 22H36L42 6H22Z" fill="#EF4444" />
+          {/* 3D Coin */}
+          <circle cx="32" cy="39" r="19" fill="#451A03" />
+          <circle cx="32" cy="36" r="19" fill="url(#bronze3D)" stroke="#FED7AA" strokeWidth="1.8" />
+          <circle cx="32" cy="36" r="14" stroke="#FEF3C7" strokeWidth="1" strokeDasharray="3 2" opacity="0.6" />
+          {/* Star */}
+          <path d="M32 25L34.8 31L41.2 31.8L36.5 36.2L37.8 42.5L32 39.2L26.2 42.5L27.5 36.2L22.8 31.8L29.2 31L32 25Z" fill="#FEF3C7" />
+        </svg>
+      );
+
+    case 'silverMedal':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_7px_rgba(148,163,184,0.45)] ${className}`}>
+          <defs>
+            <radialGradient id="silver3D" cx="35%" cy="30%" r="70%">
+              <stop offset="0%" stopColor="#FFFFFF" />
+              <stop offset="55%" stopColor="#94A3B8" />
+              <stop offset="100%" stopColor="#334155" />
+            </radialGradient>
+          </defs>
+          <path d="M22 6L28 22H36L42 6H22Z" fill="#3B82F6" />
+          <circle cx="32" cy="39" r="19" fill="#1E293B" />
+          <circle cx="32" cy="36" r="19" fill="url(#silver3D)" stroke="#F8FAFC" strokeWidth="1.8" />
+          <path d="M32 25L34.8 31L41.2 31.8L36.5 36.2L37.8 42.5L32 39.2L26.2 42.5L27.5 36.2L22.8 31.8L29.2 31L32 25Z" fill="#FFFFFF" />
+        </svg>
+      );
+
+    case 'goldMedal':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_8px_rgba(234,179,8,0.5)] ${className}`}>
+          <defs>
+            <radialGradient id="gold3D" cx="35%" cy="30%" r="70%">
+              <stop offset="0%" stopColor="#FEF08A" />
+              <stop offset="50%" stopColor="#EAB308" />
+              <stop offset="100%" stopColor="#854D0E" />
+            </radialGradient>
+          </defs>
+          <path d="M22 6L28 22H36L42 6H22Z" fill="#10B981" />
+          <circle cx="32" cy="39" r="19" fill="#713F12" />
+          <circle cx="32" cy="36" r="19" fill="url(#gold3D)" stroke="#FEF9C3" strokeWidth="1.8" />
+          <path d="M32 25L34.8 31L41.2 31.8L36.5 36.2L37.8 42.5L32 39.2L26.2 42.5L27.5 36.2L22.8 31.8L29.2 31L32 25Z" fill="#FFFFFF" />
+        </svg>
+      );
+
+    case 'diamondGem':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_9px_rgba(56,189,248,0.5)] ${className}`}>
+          <defs>
+            <linearGradient id="diamond3D" x1="10" y1="12" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#E0F2FE" />
+              <stop offset="45%" stopColor="#38BDF8" />
+              <stop offset="100%" stopColor="#0284C7" />
+            </linearGradient>
+          </defs>
+          <path d="M20 14H44L56 28L32 54L8 28L20 14Z" fill="url(#diamond3D)" stroke="#BAE6FD" strokeWidth="1.8" strokeLinejoin="round" />
+          <path d="M8 28H56M20 14L26 28L32 54M44 14L38 28L32 54M26 28L32 14L38 28" stroke="#E0F2FE" strokeWidth="1.3" strokeOpacity="0.8" />
+        </svg>
+      );
+
+    case 'platinumCrown':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_9px_rgba(168,85,247,0.5)] ${className}`}>
+          <defs>
+            <linearGradient id="platCrown3D" x1="10" y1="14" x2="54" y2="50" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#F3E8FF" />
+              <stop offset="50%" stopColor="#C084FC" />
+              <stop offset="100%" stopColor="#6B21A8" />
+            </linearGradient>
+          </defs>
+          <path d="M10 46L14 22L25 32L32 16L39 32L50 22L54 46H10Z" fill="url(#platCrown3D)" stroke="#F3E8FF" strokeWidth="1.8" strokeLinejoin="round" />
+          <rect x="10" y="48" width="44" height="6" rx="3" fill="#7E22CE" stroke="#E9D5FF" strokeWidth="1.2" />
+          <circle cx="14" cy="19" r="3" fill="#FDE047" />
+          <circle cx="32" cy="13" r="3.5" fill="#00D09C" />
+          <circle cx="50" cy="19" r="3" fill="#FDE047" />
+        </svg>
+      );
+
+    case 'chevronRight':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_2px_4px_rgba(15,23,42,0.3)] ${className}`}>
+          <circle cx="32" cy="32" r="24" fill="#1E293B" fillOpacity="0.45" stroke="#94A3B8" strokeWidth="2" strokeOpacity="0.4" />
+          <path d="M27 20L39 32L27 44" stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+
+    case 'arrowLeft':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_2px_4px_rgba(15,23,42,0.3)] ${className}`}>
+          <circle cx="32" cy="32" r="24" fill="#1E293B" fillOpacity="0.35" stroke="#94A3B8" strokeWidth="2" strokeOpacity="0.4" />
+          <path d="M36 20L24 32L36 44" stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+
+    case 'stopAlert':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_3px_6px_rgba(244,63,94,0.45)] ${className}`}>
+          <defs>
+            <linearGradient id="stopOct3D" x1="10" y1="10" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#FDA4AF" />
+              <stop offset="50%" stopColor="#E11D48" />
+              <stop offset="100%" stopColor="#881337" />
+            </linearGradient>
+          </defs>
+          <path d="M22 8H42L56 22V42L42 56H22L8 42V22L22 8Z" fill="url(#stopOct3D)" stroke="#FFE4E6" strokeWidth="2" />
+          <rect x="20" y="29" width="24" height="6" rx="3" fill="#FFFFFF" />
+        </svg>
+      );
+
+    case 'message':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_8px_rgba(244,63,94,0.35)] ${className}`}>
+          <defs>
+            <linearGradient id="msgBubble3D" x1="10" y1="10" x2="54" y2="52" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#FDA4AF" />
+              <stop offset="50%" stopColor="#F43F5E" />
+              <stop offset="100%" stopColor="#9F1239" />
+            </linearGradient>
+          </defs>
+          <path d="M12 16C12 11.6 15.6 8 20 8H44C48.4 8 52 11.6 52 16V36C52 40.4 48.4 44 44 44H26L14 54V44C12.9 44 12 41.5 12 36V16Z" fill="url(#msgBubble3D)" stroke="#FFE4E6" strokeWidth="1.5" />
+          <circle cx="24" cy="26" r="3" fill="#FFFFFF" />
+          <circle cx="32" cy="26" r="3" fill="#FFFFFF" />
+          <circle cx="40" cy="26" r="3" fill="#FFFFFF" />
+        </svg>
+      );
+
+    case 'database':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_8px_rgba(0,208,156,0.4)] ${className}`}>
+          <defs>
+            <linearGradient id="dbCyl3D" x1="12" y1="10" x2="52" y2="54" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#6EE7B7" />
+              <stop offset="50%" stopColor="#00D09C" />
+              <stop offset="100%" stopColor="#047857" />
+            </linearGradient>
+          </defs>
+          {/* Bottom Cylinder */}
+          <path d="M14 40V49C14 53.4 22.1 57 32 57C41.9 57 50 53.4 50 49V40" fill="url(#dbCyl3D)" stroke="#D1FAE5" strokeWidth="1.4" />
+          {/* Middle Cylinder */}
+          <path d="M14 27V38C14 42.4 22.1 46 32 46C41.9 46 50 42.4 50 38V27" fill="url(#dbCyl3D)" stroke="#D1FAE5" strokeWidth="1.4" />
+          {/* Top Cylinder */}
+          <path d="M14 16V26C14 30.4 22.1 34 32 34C41.9 34 50 30.4 50 26V16" fill="url(#dbCyl3D)" stroke="#D1FAE5" strokeWidth="1.4" />
+          <ellipse cx="32" cy="16" rx="18" ry="7" fill="#34D399" stroke="#ECFDF5" strokeWidth="1.5" />
+          {/* LED Status Dots */}
+          <circle cx="42" cy="28" r="2" fill="#FEF08A" />
+          <circle cx="42" cy="40" r="2" fill="#FEF08A" />
+          <circle cx="42" cy="51" r="2" fill="#FEF08A" />
+        </svg>
+      );
+
+    case 'search':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_8px_rgba(56,189,248,0.4)] ${className}`}>
+          <defs>
+            <radialGradient id="lens3D" cx="35%" cy="30%" r="70%">
+              <stop offset="0%" stopColor="#E0F2FE" />
+              <stop offset="55%" stopColor="#38BDF8" />
+              <stop offset="100%" stopColor="#0284C7" />
+            </radialGradient>
+          </defs>
+          <path d="M39 39L53 53" stroke="#6366F1" strokeWidth="8" strokeLinecap="round" />
+          <path d="M39 39L53 53" stroke="#A5B4FC" strokeWidth="3" strokeLinecap="round" />
+          <circle cx="28" cy="28" r="18" fill="url(#lens3D)" stroke="#BAE6FD" strokeWidth="3" />
+          <path d="M20 20C22 17 26 16 30 17" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" />
+        </svg>
+      );
+
+    case 'play':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_8px_rgba(15,23,42,0.35)] ${className}`}>
+          <defs>
+            <linearGradient id="play3D" x1="12" y1="10" x2="52" y2="54" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#34D399" />
+              <stop offset="55%" stopColor="#059669" />
+              <stop offset="100%" stopColor="#064E3B" />
+            </linearGradient>
+          </defs>
+          <circle cx="32" cy="34" r="24" fill="#064E3B" />
+          <circle cx="32" cy="31" r="24" fill="url(#play3D)" stroke="#D1FAE5" strokeWidth="1.5" />
+          <path d="M26 20L44 31L26 42V20Z" fill="#FFFFFF" stroke="#ECFDF5" strokeWidth="1.5" strokeLinejoin="round" />
+        </svg>
+      );
+
+    case 'info':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_8px_rgba(99,102,241,0.4)] ${className}`}>
+          <defs>
+            <radialGradient id="infoSphere3D" cx="35%" cy="30%" r="70%">
+              <stop offset="0%" stopColor="#93C5FD" />
+              <stop offset="55%" stopColor="#3B82F6" />
+              <stop offset="100%" stopColor="#1E3A8A" />
+            </radialGradient>
+          </defs>
+          <circle cx="32" cy="34" r="24" fill="#172554" />
+          <circle cx="32" cy="31" r="24" fill="url(#infoSphere3D)" stroke="#DBEAFE" strokeWidth="1.5" />
+          <circle cx="32" cy="20" r="3" fill="#FFFFFF" />
+          <path d="M32 28V42" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" />
+        </svg>
+      );
+
+    case 'fileReport':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_8px_rgba(16,185,129,0.35)] ${className}`}>
+          <defs>
+            <linearGradient id="docBody3D" x1="14" y1="8" x2="50" y2="56" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#6EE7B7" />
+              <stop offset="55%" stopColor="#10B981" />
+              <stop offset="100%" stopColor="#047857" />
+            </linearGradient>
+          </defs>
+          <path d="M16 12C16 9.8 17.8 8 20 8H38L50 20V52C50 54.2 48.2 56 46 56H20C17.8 56 16 54.2 16 52V12Z" fill="url(#docBody3D)" stroke="#D1FAE5" strokeWidth="1.5" />
+          <path d="M38 8V20H50" fill="#A7F3D0" stroke="#D1FAE5" strokeWidth="1.5" strokeLinejoin="round" />
+          <path d="M23 28H41M23 36H41M23 44H34" stroke="#FFFFFF" strokeWidth="3.5" strokeLinecap="round" />
+        </svg>
+      );
+
+    case 'folder':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_8px_rgba(245,158,11,0.4)] ${className}`}>
+          <defs>
+            <linearGradient id="folder3D" x1="8" y1="14" x2="56" y2="52" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#FDE047" />
+              <stop offset="50%" stopColor="#F59E0B" />
+              <stop offset="100%" stopColor="#B45309" />
+            </linearGradient>
+          </defs>
+          <path d="M8 18C8 15.2 10.2 13 13 13H26L31 19H51C53.8 19 56 21.2 56 24V48C56 50.8 53.8 53 51 53H13C10.2 53 8 50.8 8 48V18Z" fill="url(#folder3D)" stroke="#FEF08A" strokeWidth="1.5" />
+          <rect x="14" y="25" width="36" height="4" rx="2" fill="#FFFFFF" fillOpacity="0.4" />
+        </svg>
+      );
+
+    case 'brain':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_4px_8px_rgba(0,208,156,0.4)] ${className}`}>
+          <defs>
+            <radialGradient id="brainCore3D" cx="35%" cy="30%" r="70%">
+              <stop offset="0%" stopColor="#6EE7B7" />
+              <stop offset="50%" stopColor="#00D09C" />
+              <stop offset="100%" stopColor="#065F46" />
+            </radialGradient>
+          </defs>
+          <circle cx="32" cy="32" r="23" fill="url(#brainCore3D)" stroke="#A7F3D0" strokeWidth="1.5" />
+          <path d="M22 32H42M32 22V42M24 24L40 40M40 24L24 40" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeOpacity="0.8" />
+          <circle cx="32" cy="32" r="6" fill="#FEF08A" stroke="#FFFFFF" strokeWidth="1.5" />
+          <circle cx="22" cy="32" r="3" fill="#FFFFFF" />
+          <circle cx="42" cy="32" r="3" fill="#FFFFFF" />
+          <circle cx="32" cy="22" r="3" fill="#FFFFFF" />
+          <circle cx="32" cy="42" r="3" fill="#FFFFFF" />
+        </svg>
+      );
+
+    case 'chevronDown':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_2px_4px_rgba(15,23,42,0.3)] ${className}`}>
+          <circle cx="32" cy="32" r="24" fill="#1E293B" fillOpacity="0.45" stroke="#94A3B8" strokeWidth="2" strokeOpacity="0.4" />
+          <path d="M20 27L32 39L44 27" stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+
+    case 'chevronUp':
+      return (
+        <svg width={s} height={s} viewBox="0 0 64 64" fill="none" className={`shrink-0 drop-shadow-[0_2px_4px_rgba(15,23,42,0.3)] ${className}`}>
+          <circle cx="32" cy="32" r="24" fill="#1E293B" fillOpacity="0.45" stroke="#94A3B8" strokeWidth="2" strokeOpacity="0.4" />
+          <path d="M20 37L32 25L44 37" stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+  }
+};
+
 

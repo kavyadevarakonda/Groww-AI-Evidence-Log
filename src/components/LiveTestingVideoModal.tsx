@@ -97,7 +97,6 @@ export const LiveTestingVideoModal: React.FC<LiveTestingVideoModalProps> = ({
   const timerRef = useRef<number | null>(null);
   const modalContainerRef = useRef<HTMLDivElement>(null);
 
-  const STREAMLIT_URL = "https://groww-review-ai.streamlit.app";
   const DRIVE_VIDEO_URL = "https://drive.google.com/drive/folders/17ILnWf9KcG-DlCeDNdqptIYSp2wL1tNB?usp=sharing";
 
   useEffect(() => {
@@ -235,19 +234,8 @@ export const LiveTestingVideoModal: React.FC<LiveTestingVideoModalProps> = ({
             </div>
           </div>
 
-          {/* Action Links: Streamlit App + Drive Video + Close */}
+          {/* Action Links: Drive Video + Close */}
           <div className="flex items-center gap-2.5">
-            {/* Directly opens the Streamlit App */}
-            <a
-              href={STREAMLIT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-xl bg-[#00D09C] hover:bg-[#00D09C]/90 text-slate-950 text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer shadow-sm"
-              title="Open the live Streamlit AI Discovery Engine app directly"
-            >
-              <Database className="w-3.5 h-3.5" />
-              <span>Streamlit App ↗</span>
-            </a>
 
             {/* Directly opens the Google Drive video */}
             <a
@@ -280,7 +268,7 @@ export const LiveTestingVideoModal: React.FC<LiveTestingVideoModalProps> = ({
               <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
               <span className="ml-2 text-slate-300 font-sans font-medium text-[11px]">
-                https://groww-review-ai.streamlit.app · Python 3.11 · Groq Llama-3.3-70B · FAISS RAG
+                Groww AI Review Discovery Engine
               </span>
             </div>
             <div className="flex items-center gap-3 text-[11px]">
